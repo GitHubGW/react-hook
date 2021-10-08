@@ -1,4 +1,4 @@
-### React Hooks
+## React Hooks
 
 - UseInput: input 태그에 입력 가능한 글자수를 제한하고, 특수기호 @를 포함시키지 않도록 제한하는 훅
 - UseTabs: 버튼을 클릭했을 때, 버튼에 해당되는 배열의 탭을 불러오는 훅
@@ -61,7 +61,7 @@ export default App;
 ```
 
 ```javascript
-// Functional Component
+// Function Component
 import React, { useState } from "react";
 
 const App = () => {
