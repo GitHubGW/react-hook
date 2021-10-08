@@ -14,7 +14,7 @@
 
 #### Class Component vs Functional Component
 
-```
+```javascript
 // Class Component
 import React, { useState } from "react";
 
@@ -60,7 +60,7 @@ class App extends React.Component {
 export default App;
 ```
 
-```
+```javascript
 // Functional Component
 import React, { useState } from "react";
 
