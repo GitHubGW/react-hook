@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect, useRef } from "react";
+import UseInput from "./UseInput";
+import UseTabs from "./UseTabs";
+import UseTitle from "./UseTitle";
+import UseClick from "./UseClick";
+import UseConfirm from "./UseConfirm";
+import UsePreventLeave from "./UsePreventLeave";
+import UseBeforeLeave from "./UseBeforeLeave";
+import UseFadeIn from "./UseFadeIn";
+import UseNetwork from "./UseNetwork";
+import UseScroll from "./UseScroll";
+import UseFullScreen from "./UseFullScreen";
+import UseNotification from "./UseNotification";
+import UseAxios from "./UseAxios";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ width: "200vh", height: "150vh" }}>
+      <UseInput />
+      <UseTabs />
+      <UseTitle />
+      <UseClick />
+      <UseConfirm />
+      <UsePreventLeave />
+      <UseBeforeLeave />
+      <UseFadeIn />
+      <UseNetwork />
+      <UseScroll />
+      <UseFullScreen />
+      <UseNotification />
+      <UseAxios />
     </div>
   );
-}
+};
 
 export default App;
