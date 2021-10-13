@@ -11,6 +11,7 @@
 - UseScroll: 윈도우에 scroll동작이 일어나게 되면 x축과 y축의 좌표를 가져와서 보여주는 훅
 - UseFullScreen: 버튼을 클릭했을 때 지정한 태그를 풀스크린으로 만드는 훅
 - UseNotification: 버튼을 클릭했을 때 브라우저 알림창을 띄워주는 훅
+- UseAxios: 버튼을 클릭했을 때 Axios를 이용해 영화 API를 받아오는 훅
 
 #### Class Component vs Functional Component
 
