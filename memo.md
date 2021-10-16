@@ -13,6 +13,67 @@
 - UseNotification: 버튼을 클릭했을 때 브라우저 알림창을 띄워주는 훅
 - UseAxios: 버튼을 클릭했을 때 Axios를 이용해 영화 API를 받아오는 훅
 
+#### NPM에 배포하기
+
+- 위의 훅들을 각각의 폴더로 분류한 후, npm init을 통해 각각의 폴더에 package.json파일을 초기화해준다.
+- package.json은 기본적으로 index.js파일을 main 파일로 지정하기 때문에 index.js파일을 반드시 생성해줘야 한다.
+- package.json에 해당 훅이 필요로 하는 패키지들을 설치해준다.
+- 설치해준 후, 해당 패키지들이 이미 사용자의 컴퓨터에 설치되어 있을 수도 있기 때문에 dependencies가 아닌 peerDependencies로 변경해준다.
+- 그래서 위의 훅들을 사용하기 위해 필요한 react가 이미 설치되어있다면, react를 다시 설치하지 않도록 한다.
+- 위의 설정이 끝났다면 npm 홈페이지에서 organization을 생성해준다. 생성할 때 '@이름'형태로 생성해준다.
+- '@이름'에서 이름 부분은 NPM에서 해당 패키지에 대한 범위같은 것을 의미하게 된다. 
+- Organization을 생성했다면, npm login을 통해 로그인을 해준 후, npm publish --access public을 통해 해당 폴더와 파일들을 배포한다.
+
+```javascript
+// index.js
+export { useTitle as default } from "./useTitle";
+
+// useTitle.js
+import { useEffect, useState } from "react";
+
+export const useTitle = (initialTitle) => {
+  const [title, setTitle] = useState(initialTitle);
+
+  const updateTitle = () => {
+    const htmlTitle = document.querySelector("title");
+    htmlTitle.innerText = title;
+  };
+
+  useEffect(updateTitle, [title]);
+
+  return setTitle;
+};
+
+// package.json
+{
+  "name": "@gitgw/use-title",
+  "version": "1.1.0",
+  "description": "React Hook to update your document's title.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GitHubGW/react-hook-npm.git"
+  },
+  "keywords": [
+    "react",
+    "react-hooks",
+    "hooks",
+    "title",
+    "usetitle"
+  ],
+  "author": "GW",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GitHubGW/react-hook-npm/issues"
+  },
+  "homepage": "https://github.com/GitHubGW/react-hook-npm#readme",
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
+```
+
 #### Class Component vs Functional Component
 
 ```javascript
