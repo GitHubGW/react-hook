@@ -43,7 +43,9 @@ export const useTitle = (initialTitle) => {
 
   return setTitle;
 };
+```
 
+```json
 // package.json
 {
   "name": "@gitgw/use-title",
