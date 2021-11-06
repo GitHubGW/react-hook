@@ -1,4 +1,4 @@
-# React-Hook
+# React-Hooks
 
 ## 🔗 Demo
 
